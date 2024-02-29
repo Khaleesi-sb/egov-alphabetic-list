@@ -46,7 +46,8 @@ class _AlphabetScrollState extends State<AlphabetScroll> {
     setState(() {
       filteredItems = items
           .where((item) =>
-          item.country.toLowerCase().contains(query.toLowerCase()))
+      item.country.toLowerCase().contains(query.toLowerCase()) ||
+          item.city.toLowerCase().contains(query.toLowerCase()))
           .toList();
     });
   }
